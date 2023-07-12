@@ -9,7 +9,7 @@ const Header = () => {
   // Our site features two visual headers, but they should be
   // grouped semantically as a single header.
   return (
-    <header>
+    <HeaderWrapper>
       <SuperHeader />
       <MainHeader>
         <Logo />
@@ -22,9 +22,14 @@ const Header = () => {
           <NavLink href="/collections">Collections</NavLink>
         </Nav>
       </MainHeader>
-    </header>
+    </HeaderWrapper>
   );
 };
+
+const HeaderWrapper = styled.header`
+  display: flex;
+  flex-direction: column;
+`;
 
 const MainHeader = styled.div`
   padding: 0 32px;
