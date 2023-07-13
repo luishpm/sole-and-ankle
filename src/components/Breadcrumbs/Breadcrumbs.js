@@ -39,6 +39,7 @@ const CrumbLink = styled.a`
 `;
 
 const Wrapper = styled.nav`
+  padding-top: .875rem;
   display: flex;
   font-size: 0.875rem;
 `;
