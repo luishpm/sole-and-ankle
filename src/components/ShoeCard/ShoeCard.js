@@ -36,6 +36,11 @@ const ShoeCard = ({
       <Wrapper>
         <ImageWrapper>
           <Image alt="" src={imageSrc} />
+          {variant !== 'default' ?
+              <Tag variant={variant}>{variant === 'on-sale' ? 'Sale' : 'Just Released!'}</Tag> :
+              ''
+          }
+
         </ImageWrapper>
         <Spacer size={12} />
         <Row>
@@ -64,6 +69,19 @@ const ImageWrapper = styled.div`
   position: relative;
 `;
 
+const Tag = styled.div`
+  position: absolute;
+  right: -4px;
+  top: 12px;
+  background: ${(props) => (props.variant === 'on-sale' ? "#C5295D" : "#6868D9")};;
+  color: white;
+  font-size: .875rem;
+  padding: 9px;
+  font-weight: 700;
+  border-radius: 2px;
+;
+`;
+
 const Image = styled.img`
   width: 100%;
 `;
@@ -80,7 +98,7 @@ const Name = styled.h3`
 `;
 
 const Price = styled.span`
-  text-decoration: ${(props) => (props.onSale ? "line-through" : "none")};;
+  text-decoration: ${(props) => (props.onSale ? "line-through" : "none")};
 `;
 
 const ColorInfo = styled.p`
